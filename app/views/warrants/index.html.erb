@@ -1,6 +1,18 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Procurações</h1>
+
+<%= form_tag warrants_path, class: 'form-inline', :method => 'get' do %>
+  <div class="form-group mb-2">
+    <label for="livro" class="sr-only">Livro</label>
+    <%= text_field_tag :book, params[:book], 
+      class: "form-control", id: 'livro', placeholder: 'Livro' %>
+  </div>
+
+  <div class="form-group mx-sm-3 mb-2">
+    <label for="folha-inicial" class="sr-only">Folha Inicial</label>
+    <%= text_field_tag :first_page, params[:first_page], 
+      class:"form-control", id: 'folha-initial', placeholder:'Folha Inicial' %>
+  </div>
+<% end %>
 
 <table class="table table-hover table-responsive-sm">
   <thead>
