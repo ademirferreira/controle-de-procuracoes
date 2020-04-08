@@ -4,7 +4,12 @@ class WarrantsController < ApplicationController
   before_action :set_warrant, only: %i[edit update destroy]
 
   def index
-    @warrants = Warrant.all
+    @pagy, @warrants = pagy(Warrant.order('book DESC, first_page ASC').all, items: 6)
+
+    @warrants = @warrants.where('book = ?', params[:book]) if params[:book]
+    if params[:first_page]
+      @warrants = @warrants.where('first_page = ?', params[:first_page])
+    end
   end
 
   def new
@@ -17,7 +22,7 @@ class WarrantsController < ApplicationController
     @warrant = Warrant.new(warrant_params)
 
     if @warrant.save
-      redirect_to @warrant, notice: 'Procuração adicionada com sucesso.'
+      redirect_to warrants_url, notice: 'Procuração adicionada com sucesso.'
     else
       render :new
     end
@@ -25,7 +30,7 @@ class WarrantsController < ApplicationController
 
   def update
     if @warrant.update(warrant_params)
-      redirect_to @warrant, notice: 'Warrant was successfully updated.'
+      redirect_to warrants_url, notice: 'Warrant was successfully updated.'
     else
       render :edit
     end
