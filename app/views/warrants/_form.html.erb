@@ -1,52 +1,67 @@
-<%= form_with(model: warrant, local: true) do |form| %>
-  <% if warrant.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(warrant.errors.count, "error") %> prohibited this warrant from being saved:</h2>
+<div class="row">
+  <div class="col-md-4">
+  
+    <%= form_with(model: warrant, local: true) do |form| %>
+      <% if warrant.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(warrant.errors.count, "error") %> prohibited this warrant from being saved:</h2>
 
-      <ul>
-        <% warrant.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+          <ul>
+            <% warrant.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
 
-  <div class="field">
-    <%= form.label :warrant_date %>
-    <%= form.date_select :warrant_date %>
+      <div class="form-group">
+        <%= form.label "Data de Lavratura:", class: 'label-control' %>
+        <%= form.date_field :warrant_date, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label "Livro", class: 'label-control' %>
+        <%= form.number_field :book, class: 'form-control' %>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <%= form.label "Folha Inicial:", class: 'label-control' %>
+          <%= form.number_field :first_page, class: 'form-control' %>
+        </div>
+
+        <div class="form-group col-md-6">
+          <%= form.label "Folha Final:", class: 'label-control' %>
+          <%= form.number_field :last_page, class: 'form-control' %>
+        </div>
+      </div>
+      
+
+      <div class="form-group">
+        <%= form.label "Controle", class: 'label-control' %>
+        <%= form.text_field :control_number, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label "Situação" %>
+        <%= form.select :situation,
+              options_for_select([['Falta assinatura', 'Falta assinatura'], ['Finalizada','Finalizada']]),{},{class: 'form-control'} 
+         %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label "Data de Finalização", class: 'label-control' %>
+        <%= form.date_field :end_date, class: 'form-control' %>
+      </div>
+
+      <div class="btn-toolbar">
+        <div class="btn-group mr-2">
+          <%= form.submit value: 'Salvar', class: 'btn btn-success' %>        
+        </div>
+        <div class="btn-group mr-2">
+          <%= link_to 'Voltar', warrants_path, class: 'btn btn-primary' %>        
+        </div>
+      </div>
+    <% end %>
   </div>
-
-  <div class="field">
-    <%= form.label :book %>
-    <%= form.number_field :book %>
-  </div>
-
-  <div class="field">
-    <%= form.label :first_page %>
-    <%= form.number_field :first_page %>
-  </div>
-
-  <div class="field">
-    <%= form.label :last_page %>
-    <%= form.number_field :last_page %>
-  </div>
-
-  <div class="field">
-    <%= form.label :control_number %>
-    <%= form.text_field :control_number %>
-  </div>
-
-  <div class="field">
-    <%= form.label :situation %>
-    <%= form.text_field :situation %>
-  </div>
-
-  <div class="field">
-    <%= form.label :end_date %>
-    <%= form.date_select :end_date %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
