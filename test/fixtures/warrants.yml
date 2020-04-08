@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  warrant_date: 2020-04-08
+  book: 1
+  first_page: 1
+  last_page: 1
+  control_number: MyString
+  situation: MyString
+  end_date: 2020-04-08
+
+two:
+  warrant_date: 2020-04-08
+  book: 1
+  first_page: 1
+  last_page: 1
+  control_number: MyString
+  situation: MyString
+  end_date: 2020-04-08

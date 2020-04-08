@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Warrants</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Warrant date</th>
+      <th>Book</th>
+      <th>First page</th>
+      <th>Last page</th>
+      <th>Control number</th>
+      <th>Situation</th>
+      <th>End date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @warrants.each do |warrant| %>
+      <tr>
+        <td><%= warrant.warrant_date %></td>
+        <td><%= warrant.book %></td>
+        <td><%= warrant.first_page %></td>
+        <td><%= warrant.last_page %></td>
+        <td><%= warrant.control_number %></td>
+        <td><%= warrant.situation %></td>
+        <td><%= warrant.end_date %></td>
+        <td><%= link_to 'Show', warrant %></td>
+        <td><%= link_to 'Edit', edit_warrant_path(warrant) %></td>
+        <td><%= link_to 'Destroy', warrant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Warrant', new_warrant_path %>

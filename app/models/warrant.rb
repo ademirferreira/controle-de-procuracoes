@@ -1,0 +1,2 @@
+class Warrant < ApplicationRecord
+end

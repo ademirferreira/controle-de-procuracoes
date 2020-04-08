@@ -1,15 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
   <head>
-    <title>WarrantsControl</title>
+    <title>Controle de procurações</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= yield %>
-  </body>
+  <header>
+      <nav class="navbar navbar-dark bg-dark">
+      <div class="container">
+        <%= link_to 'Controle de procurações', warrants_path, class: 'navbar-brand' %>
+      </div>
+      </nav>
+    </header>
+
+    <div class="container">
+      <main role="main" class="pb-3">
+        <%= yield %>
+      </main>
+    </div>    
 </html>

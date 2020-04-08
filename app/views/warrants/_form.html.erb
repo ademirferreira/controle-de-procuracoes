@@ -1,0 +1,52 @@
+<%= form_with(model: warrant, local: true) do |form| %>
+  <% if warrant.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(warrant.errors.count, "error") %> prohibited this warrant from being saved:</h2>
+
+      <ul>
+        <% warrant.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :warrant_date %>
+    <%= form.date_select :warrant_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :book %>
+    <%= form.number_field :book %>
+  </div>
+
+  <div class="field">
+    <%= form.label :first_page %>
+    <%= form.number_field :first_page %>
+  </div>
+
+  <div class="field">
+    <%= form.label :last_page %>
+    <%= form.number_field :last_page %>
+  </div>
+
+  <div class="field">
+    <%= form.label :control_number %>
+    <%= form.text_field :control_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :situation %>
+    <%= form.text_field :situation %>
+  </div>
+
+  <div class="field">
+    <%= form.label :end_date %>
+    <%= form.date_select :end_date %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
