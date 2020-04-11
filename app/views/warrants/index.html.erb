@@ -11,13 +11,12 @@
     <label for="folha-inicial" class="sr-only">Folha Inicial</label>
     <%= text_field_tag :first_page, params[:first_page], 
       class:"form-control", id: 'folha-initial', placeholder:'Folha Inicial' %>
-  </div>
-
+  </div>  
   <%= submit_tag "Search", class: 'btn btn-outline-secondary mb-2' %>
 <% end %>
 
 <table class="table table-hover table-responsive-sm">
-  <thead>
+  <thead class="thead-dark">
     <tr>
       <th>Data de Lavratura</th>
       <th>Livro</th>
@@ -38,7 +37,14 @@
         <td><%= warrant.first_page %></td>
         <td><%= warrant.last_page %></td>
         <td><%= warrant.control_number %></td>
-        <td><%= warrant.situation %></td>
+        <td>
+          <% if warrant.situation == 'Falta assinatura'%>
+            <span class="badge badge-warning"><i class="fa fa-exclamation-circle"></i> <%= warrant.situation %> </span>
+          <% else %>
+            <span class="badge badge-success"><i class="far fa-check-circle"></i> <%= warrant.situation %> </span>
+          <% end %>
+          
+        </td>
         <td><%= warrant.end_date %></td>
         
         <td>
