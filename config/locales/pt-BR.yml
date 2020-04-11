@@ -1,0 +1,19 @@
+pt-BR:
+  activerecord:
+    models:
+      warrant: 'Procuração'
+
+    attributes:
+      default: &default
+        created_at: 'Criado em'
+        updated_at: 'Atualizado em'
+
+      warrant:
+        <<: *default
+        warrant_date: 'Data de Lavratura'
+        book: 'Livro'
+        first_page: 'Página Inicial'
+        last_page: 'Página Final'
+        control_number: 'Número de controle'
+        situation: 'Situação'
+        end_date: 'Data de Finalização'        

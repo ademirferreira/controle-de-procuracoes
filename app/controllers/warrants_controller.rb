@@ -22,7 +22,7 @@ class WarrantsController < ApplicationController
     @warrant = Warrant.new(warrant_params)
 
     if @warrant.save
-      redirect_to warrants_url, notice: 'Procuração adicionada com sucesso.'
+      redirect_to warrants_url
     else
       render :new
     end
@@ -30,7 +30,7 @@ class WarrantsController < ApplicationController
 
   def update
     if @warrant.update(warrant_params)
-      redirect_to warrants_url, notice: 'Warrant was successfully updated.'
+      redirect_to warrants_url
     else
       render :edit
     end
@@ -38,7 +38,7 @@ class WarrantsController < ApplicationController
 
   def destroy
     @warrant.destroy
-    redirect_to warrants_url, notice: 'Warrant was successfully destroyed.'
+    redirect_to warrants_url
   end
 
   private
