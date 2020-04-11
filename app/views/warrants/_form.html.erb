@@ -4,7 +4,7 @@
     <%= form_with(model: warrant, local: true) do |form| %>
       <% if warrant.errors.any? %>
         <div id="error_explanation">
-          <h2><%= pluralize(warrant.errors.count, "error") %> prohibited this warrant from being saved:</h2>
+          <h2><%= pluralize(warrant.errors.count, "erro") %> proibiu essa procuração de ser salva:</h2>
 
           <ul>
             <% warrant.errors.full_messages.each do |message| %>
