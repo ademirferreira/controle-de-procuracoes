@@ -2,17 +2,11 @@
 
 <%= form_tag warrants_path, class: 'form-inline', :method => 'get' do %>
   <div class="form-group mb-2">
-    <label for="livro" class="sr-only">Livro</label>
-    <%= text_field_tag :book, params[:book], 
-      class: "form-control", id: 'livro', placeholder: 'Livro' %>
-  </div>
-
-  <div class="form-group mx-sm-3 mb-2">
-    <label for="folha-inicial" class="sr-only">Folha Inicial</label>
-    <%= text_field_tag :first_page, params[:first_page], 
-      class:"form-control", id: 'folha-initial', placeholder:'Folha Inicial' %>
+    <label for="controle" class="sr-only">Número de controle</label>
+    <%= text_field_tag :control_number, params[:control_number], 
+      class: "form-control", id: 'controle', placeholder: 'Número de controle' %>
   </div>  
-  <%= submit_tag "Search", class: 'btn btn-outline-secondary mb-2' %>
+  <%= submit_tag "Pesquisar", class: 'btn btn-outline-secondary mb-2' %>
 <% end %>
 
 <table class="table table-hover table-responsive-sm">
@@ -22,8 +16,9 @@
       <th>Livro</th>
       <th>Folha Inicial</th>
       <th>Folha Final </th>
-      <th>Número de Controle</th>
+      <th>Controle</th>
       <th>Situação</th>
+      <th>Observação</th>
       <th>Data de Finalização</th>
       <th colspan="3"></th>
     </tr>
@@ -36,23 +31,27 @@
         <td><%= warrant.book %></td>
         <td><%= warrant.first_page %></td>
         <td><%= warrant.last_page %></td>
-        <td><%= warrant.control_number %></td>
+        <td><%= warrant.control_number %></td>        
         <td>
           <% if warrant.situation == 'Falta assinatura'%>
             <span class="badge badge-warning"><i class="fa fa-exclamation-circle"></i> <%= warrant.situation %> </span>
           <% else %>
             <span class="badge badge-success"><i class="far fa-check-circle"></i> <%= warrant.situation %> </span>
-          <% end %>
-          
+          <% end %>          
         </td>
+        <td><%= warrant.observation %></td>
         <td><%= warrant.end_date %></td>
-        
-        <td>
-          <%= link_to 'Editar', edit_warrant_path(warrant), class: 'btn btn-sm btn-outline-primary' %>
-        </td>
-        <td>
-          <%= link_to 'Excluir', warrant, method: :delete, data: { confirm: 'Tem certeza que deseja excluir' },
-          class: 'btn btn-sm btn-outline-danger' %>
+        <td colspan="3">
+          <%= link_to warrant, class: 'btn btn-sm btn-info' do %>
+            <i class="fa fa-eye"></i>
+          <% end %>
+          <%= link_to edit_warrant_path(warrant), class: 'btn btn-sm btn-primary' do %>
+            <i class="fa fa-edit"></i>
+          <% end %>
+          <%= link_to warrant, method: :delete, data: { confirm: 'Tem certeza que deseja excluir' },
+          class: 'btn btn-sm btn-danger' do %>
+            <i class="fa fa-trash"></i>
+          <% end %>
         </td>
       </tr>
     <% end %>
@@ -61,4 +60,4 @@
 <%== pagy_bootstrap_nav(@pagy).html_safe%>
 <br>
 
-<%= link_to 'Nova Procuração', new_warrant_path, class: 'btn btn-outline-success'%>
+<%= link_to 'Nova Procuração', new_warrant_path, class: 'btn btn-success'%>

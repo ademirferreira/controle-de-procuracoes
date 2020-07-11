@@ -1,12 +1,14 @@
 # frozen_string_literal: true
 
 class WarrantsController < ApplicationController
-  before_action :set_warrant, only: %i[edit update destroy]
+  before_action :set_warrant, only: %i[edit update destroy show]
 
   def index
     @pagy, @warrants = pagy(Warrant.order('book DESC, first_page ASC').all, items: 5)
 
-    @warrants = @warrants.where('book = ?', params[:book]) if params[:book]
+    if params[:control_number]
+      @warrants = @warrants.where('control_number = ?', params[:control_number])
+    end
     if params[:first_page]
       @warrants = @warrants.where('first_page = ?', params[:first_page])
     end
@@ -36,6 +38,8 @@ class WarrantsController < ApplicationController
     end
   end
 
+  def show; end
+
   def destroy
     @warrant.destroy
     redirect_to warrants_url
@@ -50,6 +54,6 @@ class WarrantsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def warrant_params
-    params.require(:warrant).permit(:warrant_date, :book, :first_page, :last_page, :control_number, :situation, :end_date)
+    params.require(:warrant).permit(:warrant_date, :book, :first_page, :last_page, :control_number, :situation, :end_date, :observation)
   end
 end

@@ -1,0 +1,47 @@
+<div class="card w-50">
+  <h5 class="card-header">Featured</h5>
+  <div class="card-body">
+    <p>
+      <strong>Warrant date:</strong>
+      <%= @warrant.warrant_date %>
+    </p>
+    <p>
+      <strong>Book:</strong>
+      <%= @warrant.book %>
+    </p>
+    <p>
+      <strong>First page:</strong>
+      <%= @warrant.first_page %>
+    </p>
+    <p>
+      <strong>Last page:</strong>
+      <%= @warrant.last_page %>
+    </p>
+    <p>
+      <strong>Control number:</strong>
+      <%= @warrant.control_number %>
+    </p>
+    <p>
+      <strong>Situation:</strong>
+      <%= @warrant.situation %>
+    </p>
+    <p>
+      <strong>Observação:</strong>
+      <%= @warrant.observation %>
+    </p>
+    <p>
+      <strong>End date:</strong>
+      <%= @warrant.end_date %>
+    </p>
+    <div class="btn-toolbar">
+      <div class="btn-group mr-2">
+        <%= link_to 'Editar', edit_warrant_path(@warrant), class: 'btn btn-primary'%>       
+      </div>
+      <div class="btn-group mr-2">
+        <%= link_to 'Voltar', warrants_path, class: 'btn btn-info' %>        
+      </div>
+    </div>
+
+  </div>
+</div>
+
