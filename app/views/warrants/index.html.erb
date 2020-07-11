@@ -33,7 +33,7 @@
         <td><%= warrant.last_page %></td>
         <td><%= warrant.control_number %></td>        
         <td>
-          <% if warrant.situation == 'Falta assinatura'%>
+          <% if warrant.situation == 'Pendente'%>
             <span class="badge badge-warning"><i class="fa fa-exclamation-circle"></i> <%= warrant.situation %> </span>
           <% else %>
             <span class="badge badge-success"><i class="far fa-check-circle"></i> <%= warrant.situation %> </span>
