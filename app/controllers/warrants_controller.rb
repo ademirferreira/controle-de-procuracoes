@@ -7,10 +7,7 @@ class WarrantsController < ApplicationController
     @pagy, @warrants = pagy(Warrant.order('book DESC, first_page ASC').all, items: 5)
 
     if params[:control_number]
-      @warrants = @warrants.where('control_number = ?', params[:control_number])
-    end
-    if params[:first_page]
-      @warrants = @warrants.where('first_page = ?', params[:first_page])
+      @warrants = @warrants.where('control_number = ?', params[:control_number].upcase)
     end
   end
 
