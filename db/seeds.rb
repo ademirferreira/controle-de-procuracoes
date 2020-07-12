@@ -57,7 +57,7 @@ warrants = Warrant.create([
                             { warrant_date: '2020-05-14', book: 5226, first_page: 71, last_page: 75, control_number: 'UNIFICADA 0085', situation: 'Pendente', observation: '', end_date: '' },
                             { warrant_date: '2020-05-18', book: 5226, first_page: 121, last_page: 124, control_number: 'IRA 0003', situation: 'Finalizada', observation: '', end_date: '2020-07-02' },
                             { warrant_date: '2020-05-26', book: 5226, first_page: 301, last_page: 302, control_number: 'BBP 0006', situation: 'Pendente', observation: 'sem efeito', end_date: '2020-05-26' },
-                            { warrant_date: '2020-05-26', book: 5226, first_page: 307, last_page: 310, control_number: 'UNIFICADA 0084', situation: 'Finalizada', observation: '', end_date: '2020-06-23' }
+                            { warrant_date: '2020-05-26', book: 5226, first_page: 307, last_page: 310, control_number: 'UNIFICADA 0084', situation: 'Finalizada', observation: '', end_date: '2020-06-23' },
                             { warrant_date: '2020-05-19', book: 5226, first_page: 291, last_page: 295, control_number: 'UNIFICADA 0090', situation: 'Finalizada', observation: '', end_date: '2020-05-26' },
                             { warrant_date: '2020-05-27', book: 5226, first_page: 317, last_page: 320, control_number: 'UNIFICADA 0087', situation: 'Finalizada', observation: '', end_date: '2020-06-29' },
                             { warrant_date: '2020-05-27', book: 5226, first_page: 321, last_page: 322, control_number: 'BEM 0007', situation: 'Finalizada', observation: '', end_date: '2020-06-23' },
@@ -66,7 +66,7 @@ warrants = Warrant.create([
                             { warrant_date: '2020-06-01', book: 5228, first_page: 31, last_page: 34, control_number: 'EBC 0003', situation: 'Pendente', observation: '', end_date: '' },
                             { warrant_date: '2020-06-01', book: 5228, first_page: 35, last_page: 36, control_number: 'PNV 0003', situation: 'Pendente', observation: '', end_date: '' },
                             { warrant_date: '2020-06-01', book: 5228, first_page: 37, last_page: 39, control_number: 'UNIFICADA 0052', situation: 'Pendente', observation: '', end_date: '' },
-                            { warrant_date: '2020-06-01', book: 5228, first_page: 41, last_page: 44, control_number: 'UNIFICADA 0042', situation: 'Pendente', observation: '', end_date: '' }
+                            { warrant_date: '2020-06-01', book: 5228, first_page: 41, last_page: 44, control_number: 'UNIFICADA 0042', situation: 'Pendente', observation: '', end_date: '' },
                             { warrant_date: '2020-06-05', book: 5228, first_page: 191, last_page: 194, control_number: 'CIC 0003', situation: 'Finalizada', observation: '', end_date: '2020-06-17' },
                             { warrant_date: '2020-06-04', book: 5228, first_page: 173, last_page: 179, control_number: 'UNIFICADA 0057', situation: 'Pendente', observation: '', end_date: '' },
                             { warrant_date: '2020-06-08', book: 5228, first_page: 225, last_page: 228, control_number: 'UNIFICADA 0071', situation: 'Pendente', observation: '', end_date: '' },
@@ -75,7 +75,7 @@ warrants = Warrant.create([
                             { warrant_date: '2020-06-16', book: 5232, first_page: 59, last_page: 60, control_number: 'ITB 0044', situation: 'Finalizada', observation: '', end_date: '2020-07-03' },
                             { warrant_date: '2020-06-16', book: 5232, first_page: 55, last_page: 58, control_number: 'LEA 0002', situation: 'Finalizada', observation: '', end_date: '2020-06-29' },
                             { warrant_date: '2020-06-16', book: 5232, first_page: 63, last_page: 64, control_number: 'ITB 0043', situation: 'Finalizada', observation: '', end_date: '2020-07-03' },
-                            { warrant_date: '2020-06-16', book: 5232, first_page: 67, last_page: 68, control_number: 'CBD 0002', situation: 'Pendente', observation: '', end_date: '' }
+                            { warrant_date: '2020-06-16', book: 5232, first_page: 67, last_page: 68, control_number: 'CBD 0002', situation: 'Pendente', observation: '', end_date: '' },
                             { warrant_date: '2020-06-18', book: 5232, first_page: 187, last_page: 188, control_number: 'ITB 0047', situation: 'Finalizada', observation: '', end_date: '2020-07-09' },
                             { warrant_date: '2020-06-18', book: 5232, first_page: 189, last_page: 191, control_number: 'UNIFICADA 0107', situation: 'Finalizada', observation: '', end_date: '2020-07-09' },
                             { warrant_date: '2020-06-18', book: 5232, first_page: 199, last_page: 202, control_number: 'ITB 0050', situation: 'Finalizada', observation: '', end_date: '2020-07-03' },
@@ -106,7 +106,7 @@ warrants = Warrant.create([
                             { warrant_date: '2020-07-03', book: 5235, first_page: 349, last_page: 355, control_number: 'UNIFICADA 0129', situation: 'Pendente', observation: '', end_date: '' },
                             { warrant_date: '2020-07-06', book: 5235, first_page: 391, last_page: 395, control_number: 'UNIFICADA 0035', situation: 'Pendente', observation: '', end_date: '' },
 
-                            { warrant_date: '2020-07-06', book: 5237, first_page: 03, last_page: 09, control_number: 'UNIFICADA 0122', situation: 'Pendente', observation: '', end_date: '' },
+                            { warrant_date: '2020-07-06', book: 5237, first_page: 3, last_page: 9, control_number: 'UNIFICADA 0122', situation: 'Pendente', observation: '', end_date: '' },
                             { warrant_date: '2020-07-06', book: 5237, first_page: 11, last_page: 17, control_number: 'UNIFICADA 0123', situation: 'Pendente', observation: '', end_date: '' },
                             { warrant_date: '2020-07-06', book: 5237, first_page: 19, last_page: 21, control_number: 'IHF 0006', situation: 'Pendente', observation: '', end_date: '' },
                             { warrant_date: '2020-07-06', book: 5237, first_page: 23, last_page: 26, control_number: 'IBB 0005', situation: 'Pendente', observation: '', end_date: '' },
@@ -119,8 +119,6 @@ warrants = Warrant.create([
                             { warrant_date: '2020-07-07', book: 5237, first_page: 61, last_page: 64, control_number: 'UNIFICADA 0034', situation: 'Pendente', observation: '', end_date: '' },
                             { warrant_date: '2020-07-07', book: 5237, first_page: 71, last_page: 75, control_number: 'UNIFICADA 0070', situation: 'Pendente', observation: '', end_date: '' },
                             { warrant_date: '2020-07-09', book: 5237, first_page: 133, last_page: 140, control_number: 'UNIFICADA 0134', situation: 'Pendente', observation: '', end_date: '' },
-                            { warrant_date: '2020-07-09', book: 5237, first_page: 141, last_page: 146, control_number: 'UNIFICADA 0135', situation: 'Pendente', observation: '', end_date: '' },
-                            
-                            
+                            { warrant_date: '2020-07-09', book: 5237, first_page: 141, last_page: 146, control_number: 'UNIFICADA 0135', situation: 'Pendente', observation: '', end_date: '' }
 
                           ])
