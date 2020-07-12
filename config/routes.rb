@@ -2,6 +2,9 @@
 
 Rails.application.routes.draw do
   root 'warrants#index'
-  resources :warrants
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :warrants do
+    collection do
+      get :export_csv
+    end
+  end
 end

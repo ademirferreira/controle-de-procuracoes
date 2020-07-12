@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class WarrantsController < ApplicationController
+  include Exportable
   before_action :set_warrant, only: %i[edit update destroy show]
 
   def index
