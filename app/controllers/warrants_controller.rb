@@ -5,7 +5,7 @@ class WarrantsController < ApplicationController
   before_action :set_warrant, only: %i[edit update destroy show]
 
   def index
-    @pagy, @warrants = pagy(Warrant.order('book DESC, first_page ASC').all, items: 5)
+    @pagy, @warrants = pagy(Warrant.order('book DESC, first_page DESC').all, items: 5)
 
     if params[:control_number]
       @warrants = @warrants.where('control_number = ?', params[:control_number].upcase)
