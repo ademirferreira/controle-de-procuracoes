@@ -2,7 +2,8 @@
 
 Rails.application.routes.draw do
   root 'warrants#index'
-  resources :warrants do
+
+  resources :warrants, path: 'procuracoes' do
     collection do
       get :export_csv
     end
