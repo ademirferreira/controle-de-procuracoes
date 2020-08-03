@@ -1,17 +1,12 @@
-<h1>Procurações</h1>
-
-<div class="row">
-
+<h1>Lista de Procurações</h1>
   <%= form_tag warrants_path, class: 'form-inline', :method => 'get' do %>
     <div class="form-group mb-2">
       <label for="controle" class="sr-only">Número de controle</label>
       <%= text_field_tag :control_number, params[:control_number], 
-        class: "form-control", id: 'controle', placeholder: 'Número de controle' %>
+        class: "form-control pl-3", id: 'controle', placeholder: 'Número de controle' %>
     </div>  
     <%= submit_tag "Pesquisar", class: 'btn btn-outline-secondary mb-2' %>
   <% end %>
-    
-</div>
 
 <table class="table table-hover table-responsive-sm">
   <thead class="thead-dark">
