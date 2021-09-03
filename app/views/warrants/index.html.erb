@@ -3,7 +3,7 @@
     <div class="form-group mb-2">
       <label for="controle" class="sr-only">Número de controle</label>
       <%= text_field_tag :control_number, params[:control_number], 
-        class: "form-control pl-3", id: 'controle', placeholder: 'Número de controle' %>
+        class: "form-control pl-3 mr-2", id: 'controle', placeholder: 'Número de controle' %>
     </div>  
     <%= submit_tag "Pesquisar", class: 'btn btn-outline-secondary mb-2' %>
   <% end %>
@@ -30,20 +30,17 @@
         <td><%= warrant.book %></td>
         <td><%= warrant.first_page %></td>
         <td><%= warrant.last_page %></td>
-        <td><%= warrant.control_number %></td>        
+        <td><%= warrant.control_number %></td>
         <td>
           <% if warrant.situation == 'Pendente'%>
             <span class="badge badge-warning"><i class="fa fa-exclamation-circle"></i> <%= warrant.situation %> </span>
           <% else %>
             <span class="badge badge-success"><i class="far fa-check-circle"></i> <%= warrant.situation %> </span>
-          <% end %>          
+          <% end %>
         </td>
         <td><%= warrant.observation %></td>
         <td><%= warrant.end_date %></td>
         <td colspan="3">
-          <%= link_to warrant, class: 'btn btn-sm btn-info' do %>
-            <i class="fa fa-eye"></i>
-          <% end %>
           <%= link_to edit_warrant_path(warrant), class: 'btn btn-sm btn-primary' do %>
             <i class="fa fa-edit"></i>
           <% end %>
@@ -56,7 +53,9 @@
     <% end %>
   </tbody>
 </table>
-<%== pagy_bootstrap_nav(@pagy).html_safe%>
+  <% if @warrants_count > 5 %>
+  <%== pagy_bootstrap_nav(@pagy).html_safe%>
+  <% end %>
 <br>
 
 <%= link_to 'Nova Procuração', new_warrant_path, class: 'btn btn-success'%>
