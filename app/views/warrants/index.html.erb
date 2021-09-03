@@ -3,7 +3,7 @@
     <div class="form-group mb-2">
       <label for="controle" class="sr-only">Número de controle</label>
       <%= text_field_tag :control_number, params[:control_number], 
-        class: "form-control pl-3 mr-2", id: 'controle', placeholder: 'Número de controle' %>
+        class: "form-control text-uppercase pl-3 mr-2", id: 'controle', placeholder: 'Número de controle' %>
     </div>  
     <%= submit_tag "Pesquisar", class: 'btn btn-outline-secondary mb-2' %>
   <% end %>
