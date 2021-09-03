@@ -1,4 +1,23 @@
 pt-BR:
+  pagy:
+
+    item_name:
+      one: "item"
+      other: "itens"
+
+    nav:
+      prev: "&lsaquo;&nbsp;Anterior"
+      next: "Próximo&nbsp;&rsaquo;"
+      gap: "&hellip;"
+
+    info:
+      no_items: "Sem resultados"
+      single_page: "Mostrando %{count} %{item_name}"
+      multiple_pages: "Mostrando %{item_name} %{from}-%{to} do total de %{count}"
+
+    combo_nav_js: "<label>Página %{page_input} de %{pages}</label>"
+
+    items_selector_js: "<label>Mostrar %{items_input} %{item_name} por página</label>"
   activerecord:
     models:
       warrant: 'Procuração'
@@ -16,4 +35,4 @@ pt-BR:
         last_page: 'Página Final'
         control_number: 'Número de controle'
         situation: 'Situação'
-        end_date: 'Data de Finalização'        
+        end_date: 'Data de Finalização'
