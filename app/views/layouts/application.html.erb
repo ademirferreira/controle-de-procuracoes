@@ -12,18 +12,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"/>
     
   </head>
-
+<body class="overflow-hidden">
   <header>
       <nav class="navbar navbar-dark bg-dark mb-3">
-      <div class="container">
-        <%= link_to 'Controle de procurações', warrants_path, class: 'navbar-brand' %>
-      </div>
+         <%= link_to 'Controle de procurações', warrants_path, class: 'navbar-brand' %>      
       </nav>
-    </header>
+  </header>
 
-    <div class="container">
+    <div class="container-fluid">
       <main role="main" class="pb-3">
         <%= yield %>
       </main>
-    </div>    
+    </div>  
+</body>
 </html>
